@@ -1,0 +1,293 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: dongle;
+    src: url(dongle/Dongle-Light.ttf);
+  }
+
+.clear{
+    clear: left;
+}
+
+h2{
+    padding: 30px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1300px;
+    background-color: #F5F8F8;
+}
+
+.container .list{
+    width: calc( 100% - 345px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #F5F8F8;
+}
+
+.list .produto{
+    width: 280px;
+    height: 388px;
+    margin-top: 27px;
+    /**/
+}
+.produto:hover{
+    box-shadow: 4px 4px 4px #ccc;
+    cursor: pointer;
+}
+
+.produto .img{
+    width: 280px;
+    height: 280px;
+}
+
+.produto .info{
+    width: 280px;
+    height: 110px;
+    color: rgb(74, 74, 74);
+    background-color: white;
+}
+
+.info p{
+    width: 100%;
+    height: 50%;
+    padding: 15px;
+}
+
+.info div{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 5px;
+}
+
+.info div p:last-child{
+    text-align: right;
+}
+
+.info div p:last-child span:nth-of-type(1),
+.info div p:last-child span:nth-of-type(2),
+.info div p:last-child span:nth-of-type(3),
+.infoPlates p:last-child span:nth-of-type(1),
+.infoPlates p:last-child span:nth-of-type(2),
+.infoPlates p:last-child span:nth-of-type(3){
+    border: 1px solid black;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.info div p:last-child span:nth-of-type(1),
+.info div p:last-child span:nth-of-type(2),
+.infoPlates p:last-child span:nth-of-type(1),
+.infoPlates p:last-child span:nth-of-type(2),
+.infoPlates p:last-child span:nth-of-type(3){
+    display: none;
+}
+
+
+/*segunda parte */
+
+.container .selected{
+    width: 345px;
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    /*box-shadow: 0px 16px 16px #ccc;*/
+    background-color: #ffffff;
+}
+
+.selected select{
+    width: 100%;
+    text-align: right;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+}
+
+.selected a{
+    text-decoration: none;
+    color: black;
+}
+
+.selected .progress{
+    padding: 15px;
+    border: 1px solid black;
+    margin: 15px auto 0 auto;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 18px;
+    position: relative;
+    width: 90%;
+
+}
+
+.selected .progress .progress-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #E7EFEF;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+}
+
+.selectedPlates{
+    margin: 20px 0;
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+    height: 75%;
+}
+
+.selectedPlates .plate {
+    width: 100%;
+    height: 70px;
+    border-top: 1px dotted black;
+    border-bottom: 1px dotted black;
+    padding: 10px;
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.plate .img{
+    width: 50px;
+    height: 50px;
+    border: 1px dotted black;
+}
+.plate img{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.plate .infoPlates{
+    padding: 15px;
+}
+
+/*trabando com a janela modal*/
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 480px;
+    margin-top: 10%;
+    border-radius: 0;
+    min-height: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+  }
+  
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 20px 0 0;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.body-header{
+    padding: 10px;
+}
+
+.body-header p {
+    font-size: 18px;
+    text-align: center;
+}
+.body-header p:last-child{
+    text-align: left;
+}
+
+.modal-body {
+    padding: 25px 76px 45px 76px;
+    display: block;
+}
+
+.body-footer {
+    padding: 5px 16px;
+}
+
+.body-footer{
+    text-align: center;
+}
+.body-footer p{
+    display: inline-block;
+    width: 100%;
+}
+.body-footer input{
+    padding: 6px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.body-footer button{
+    width: 200px;
+    padding: 9px;
+    background-color: rgb(255, 255, 44);
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    
+}
+
+div.modificado{
+    padding-top: 15px;
+}
+
+.body-footer button:active{
+    background-color: rgb(250, 250, 7);
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+
+li{
+    list-style-type: none;
+}
